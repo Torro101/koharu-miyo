@@ -1,4 +1,4 @@
-# Koharu Miyo Website
+# Koharu Website
 
 Static website for MIYO, the Android comic and manga reader maintained at:
 
