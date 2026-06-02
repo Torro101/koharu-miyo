@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MIYO - Open-source comic and manga reader for Android</title>
   <meta name="description" content="MIYO is a fast, extensible, open-source comic and manga reader for Android with offline reading, source plugins, smart downloads, and native performance work.">
-  <meta name="theme-color" content="#063f4f">
+  <meta name="theme-color" content="#2c2037">
   <meta property="og:title" content="MIYO">
   <meta property="og:description" content="A fast, extensible, open-source comic and manga reader for Android.">
   <meta property="og:type" content="website">
@@ -17,8 +17,8 @@
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header" data-elevated="false">
-    <a class="brand" href="#top" aria-label="MIYO home">
-      <img src="assets/icon.png" alt="" width="36" height="36">
+    <a class="brand" href="./" aria-label="MIYO home">
+      <img src="assets/icon.png" alt="" width="38" height="38">
       <span>MIYO</span>
     </a>
     <nav class="site-nav" aria-label="Primary navigation">
@@ -30,161 +30,172 @@
     </nav>
   </header>
 
-  <main id="main">
-    <section class="hero" id="top">
-      <div class="hero-copy">
+  <main id="main" class="shell">
+    <section class="hero">
+      <div>
         <p class="eyebrow">Koharu Miyo for Android</p>
-        <h1>Read, download, and refine your comic library without the noise.</h1>
+        <h1>A reader that treats your library like it belongs to you.</h1>
         <p class="lead">
-          MIYO is an open-source reader focused on large libraries, reliable offline access,
-          source extensibility, and practical native performance work.
+          MIYO is an open-source comic and manga reader focused on offline reliability,
+          parser extensibility, source-aware downloads, and practical native performance work.
         </p>
-        <div class="hero-actions" id="download">
+        <div class="hero-actions">
           <a class="button primary" href="https://github.com/Torro101/MIYO/releases/download/v0.0.5/Miyo-v0.0.5-release.apk">
             <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#download"></use></svg>
             Download APK v0.0.5
           </a>
+          <a class="button secondary" href="docs/">
+            <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#book"></use></svg>
+            Read docs
+          </a>
           <a class="button secondary" href="github/">
             <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#github"></use></svg>
-            Open GitHub
+            GitHub
           </a>
         </div>
-        <p class="fineprint">Android 5.0+ · GPLv3 · Package: org.koharu.miyo</p>
+        <p class="fineprint">Android 5.0+ · GPLv3 · Package <code>org.koharu.miyo</code></p>
       </div>
 
-      <div class="product-visual" aria-label="MIYO app preview">
-        <div class="phone-shell">
-          <div class="phone-status">
-            <span>9:41</span>
-            <span>MIYO</span>
-          </div>
-          <div class="search-pill">
-            <span class="search-icon"></span>
-            <span>Search manga</span>
-          </div>
-          <div class="library-grid" aria-hidden="true">
-            <span></span><span></span><span></span>
-            <span></span><span></span><span></span>
-          </div>
-          <div class="reader-panel">
-            <div class="reader-line"></div>
-            <div>
-              <strong>Offline chapter ready</strong>
-              <span>Downloaded pages are used first.</span>
-            </div>
-          </div>
-          <div class="bottom-nav" aria-hidden="true">
-            <span class="active"></span><span></span><span></span><span></span>
-          </div>
-        </div>
-        <div class="icon-plate">
-          <img src="assets/icon.svg" alt="MIYO app icon">
+      <div class="hero-visual" aria-label="MIYO app screenshots">
+        <div class="screen-wall">
+          <figure class="shot-card large">
+            <img src="assets/screenshots/history.png" alt="MIYO history screen showing downloaded manga cards">
+            <figcaption class="shot-caption"><span>History</span><span>Offline progress</span></figcaption>
+          </figure>
+          <figure class="shot-card small">
+            <img src="assets/screenshots/explore.png" alt="MIYO explore screen with source shortcuts and manga sources">
+            <figcaption class="shot-caption"><span>Explore</span><span>Sources</span></figcaption>
+          </figure>
+          <figure class="shot-card">
+            <img src="assets/screenshots/title.png" alt="MIYO manga detail screen">
+            <figcaption class="shot-caption"><span>Title view</span><span>Reader flow</span></figcaption>
+          </figure>
+          <figure class="shot-card">
+            <img src="assets/screenshots/feed.png" alt="MIYO feed screen with update menu">
+            <figcaption class="shot-caption"><span>Feed</span><span>Updates</span></figcaption>
+          </figure>
         </div>
       </div>
     </section>
 
-    <section class="release-strip" aria-label="Current release">
+    <section class="release-strip" aria-label="Latest release">
       <div>
-        <strong>Latest release</strong>
-        <span>v0.0.5 · release APK and refinement model package are hosted on GitHub Releases.</span>
+        <strong>Latest release: v0.0.5</strong>
+        <span>APK and refinement model package are hosted on GitHub Releases.</span>
       </div>
-      <a href="downloads/">Release notes</a>
+      <a class="text-link" href="downloads/">View release page</a>
     </section>
 
-    <section class="section" id="features">
-      <div class="section-heading">
-        <p class="eyebrow">What MIYO focuses on</p>
-        <h2>A reader built around ownership and speed.</h2>
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Why this fork exists</p>
+          <h2>Less marketing shell, more reader infrastructure.</h2>
+        </div>
+        <p>
+          MIYO continues the Kotatsu and Usagi lineage while pushing local reading,
+          download diagnostics, C++ helper paths, and release automation into sharper focus.
+        </p>
       </div>
       <div class="feature-grid">
         <article class="feature-card">
-          <span class="feature-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#book"></use></svg></span>
-          <span class="feature-mark">01</span>
-          <h3>Offline-first reading</h3>
-          <p>Downloaded chapters are treated as first-class local content, reducing unnecessary network use when reading what is already on disk.</p>
+          <span class="card-kicker"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#book"></use></svg>Reader</span>
+          <h3>Downloaded-first chapter loading</h3>
+          <p>Downloaded pages are treated as primary content. Network fallback should not fight the local library when chapters already exist on disk.</p>
         </article>
         <article class="feature-card">
-          <span class="feature-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#download"></use></svg></span>
-          <span class="feature-mark">02</span>
-          <h3>Smart download workflow</h3>
-          <p>Download management is tuned for background work, cancellation paths, stuck-state visibility, and robust local storage handling.</p>
+          <span class="card-kicker"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#download"></use></svg>Downloads</span>
+          <h3>Background work with visible state</h3>
+          <p>Download workflows account for cancellation, stuck providers, storage validation, and user-visible progress surfaces.</p>
         </article>
         <article class="feature-card">
-          <span class="feature-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#zap"></use></svg></span>
-          <span class="feature-mark">03</span>
-          <h3>Native performance helpers</h3>
-          <p>C++ integrations support faster startup-adjacent work, image probing, archive handling, and refinement paths where native code is useful.</p>
+          <span class="card-kicker"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#plug"></use></svg>Sources</span>
+          <h3>Parser and plugin boundaries</h3>
+          <p>Source logic is kept separate from the reader where possible through parser infrastructure and guarded plugin imports.</p>
         </article>
         <article class="feature-card">
-          <span class="feature-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#plug"></use></svg></span>
-          <span class="feature-mark">04</span>
-          <h3>Source and plugin separation</h3>
-          <p>Source-specific logic stays separate from the core app through parser infrastructure and guarded external plugin imports.</p>
+          <span class="card-kicker"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#zap"></use></svg>Native</span>
+          <h3>C++ where it earns its place</h3>
+          <p>Native helpers support image probing, archive work, and performance-sensitive paths without turning the app into a native rewrite.</p>
         </article>
         <article class="feature-card">
-          <span class="feature-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#image"></use></svg></span>
-          <span class="feature-mark">05</span>
-          <h3>Image refinement tools</h3>
-          <p>Optional refinement work can improve downloaded chapters while preserving safety checks against corrupted output.</p>
+          <span class="card-kicker"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#image"></use></svg>Refinement</span>
+          <h3>Optional local image tools</h3>
+          <p>Model packages are release assets, not invisible bloat. Users can keep refinement optional and inspect what they install.</p>
         </article>
         <article class="feature-card">
-          <span class="feature-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#branch"></use></svg></span>
-          <span class="feature-mark">06</span>
-          <h3>Open development</h3>
-          <p>MIYO is a rebranded continuation of Usagi, derived from Kotatsu, with visible credit and GPLv3 source availability.</p>
+          <span class="card-kicker"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#branch"></use></svg>Open source</span>
+          <h3>Credits stay visible</h3>
+          <p>MIYO is a rebranded continuation of Usagi, derived from Kotatsu. The website names that lineage directly.</p>
         </article>
       </div>
     </section>
 
-    <section class="architecture" id="architecture">
-      <div class="section-heading">
-        <p class="eyebrow">Architecture</p>
-        <h2>Simple surface, layered internals.</h2>
-      </div>
-      <div class="architecture-layout">
-        <div class="architecture-copy">
-          <p>
-            The app keeps reading, storage, parsing, downloads, refinement, and release update concerns
-            separated so each layer can be improved without turning the reader into a single fragile workflow.
-          </p>
-          <p>
-            This website is only for MIYO project information and downloads. It does not host manga,
-            source catalogs, or content mirrored from third-party providers.
-          </p>
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">App surface</p>
+          <h2>The website now shows the actual app language.</h2>
         </div>
-        <ol class="system-list">
-          <li><span>Reader</span><strong>pages, cache, progress, offline fallback</strong></li>
-          <li><span>Downloads</span><strong>queues, workers, notifications, storage validation</strong></li>
-          <li><span>Sources</span><strong>parser boundaries, auth, captcha handoff, plugin guards</strong></li>
-          <li><span>Native</span><strong>image probes, archive work, performance helpers</strong></li>
-        </ol>
+        <p>
+          The screenshots are not filler mockups. They show the real black and purple reading UI,
+          bottom navigation, search surfaces, feed menu, title details, and source discovery flow.
+        </p>
+      </div>
+      <div class="app-gallery" aria-label="MIYO app screenshots">
+        <figure>
+          <img src="assets/screenshots/history.png" alt="MIYO history tab">
+          <figcaption>History</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/screenshots/favorites.png" alt="MIYO favorites tab">
+          <figcaption>Favorites</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/screenshots/title.png" alt="MIYO title details">
+          <figcaption>Title details</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/screenshots/explore.png" alt="MIYO explore tab">
+          <figcaption>Explore</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/screenshots/feed.png" alt="MIYO feed tab">
+          <figcaption>Feed</figcaption>
+        </figure>
       </div>
     </section>
 
-    <section class="download-panel">
+    <section class="section split">
       <div>
-        <p class="eyebrow">Install</p>
-        <h2>Get the current public APK.</h2>
-        <p>Download from the official GitHub Release. Keep future updates on the same package name and signing key for Android update compatibility.</p>
+        <p class="eyebrow">Architecture</p>
+        <h2>Simple pages, clear layers.</h2>
+        <p class="lead">The public site mirrors the project shape: reader, downloads, sources, native helpers, releases, and credits each have their own page or section.</p>
       </div>
-      <div class="download-actions">
-        <a class="button primary" href="https://github.com/Torro101/MIYO/releases/download/v0.0.5/Miyo-v0.0.5-release.apk">
-          <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#download"></use></svg>
-          Download APK
-        </a>
-        <a class="button secondary" href="github/">
-          <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#github"></use></svg>
-          Source code
-        </a>
-        <a class="text-link" href="https://github.com/Torro101/MIYO/releases/download/v0.0.5/miyo-refinement-models-v0.0.5.zip">Refinement models package</a>
-      </div>
+      <ol class="system-list">
+        <li><span>Reader</span><strong>chapter pages, progress, cache, offline fallback</strong></li>
+        <li><span>Downloads</span><strong>workers, notifications, storage validation, cancellation</strong></li>
+        <li><span>Sources</span><strong>parsers, captcha handoff, source settings, plugin guards</strong></li>
+        <li><span>Native</span><strong>image probes, archive helpers, refinement acceleration</strong></li>
+        <li><span>Release</span><strong>GitHub Actions, APK assets, model package assets</strong></li>
+      </ol>
     </section>
+
+    <nav class="pager" aria-label="Page navigation">
+      <a class="next" href="features/">
+        <div>
+          <small>Next</small>
+          <span>Feature guide</span>
+        </div>
+        <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#chevron-right"></use></svg>
+      </a>
+    </nav>
   </main>
 
-  <footer class="site-footer">
+  <footer class="site-footer shell">
     <div>
       <strong>MIYO</strong>
-      <p>Open-source Android comic reader. Forked from Usagi and Kotatsu lineage; not affiliated with content providers.</p>
+      <p>Open-source Android comic reader. This website does not host manga, mirrors, or third-party source catalogs.</p>
     </div>
     <nav aria-label="Footer links">
       <a href="github/">GitHub</a>

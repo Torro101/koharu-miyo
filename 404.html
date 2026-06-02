@@ -5,18 +5,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Page not found - MIYO</title>
   <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#2c2037">
+  <link rel="icon" href="assets/icon.png">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <main class="download-panel" style="margin-top: 12vh;">
-    <div>
-      <p class="eyebrow">404</p>
-      <h1 style="font-size: clamp(40px, 8vw, 72px);">Page not found.</h1>
-      <p>The MIYO website is small on purpose. The page you opened is not part of it.</p>
-    </div>
-    <div class="download-actions">
-      <a class="button primary" href="./">Back to MIYO</a>
-    </div>
+  <main class="redirect-panel">
+    <section class="redirect-card" aria-labelledby="missing-title">
+      <div class="github-window">
+        <div class="github-titlebar" aria-hidden="true">
+          <span class="window-dot"></span>
+          <span class="window-dot"></span>
+          <span class="window-dot"></span>
+          <span>koharu-miyo / 404</span>
+        </div>
+        <div class="github-body">
+          <div class="github-mark">
+            <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#book"></use></svg>
+          </div>
+          <div>
+            <p class="eyebrow">404</p>
+            <h1 id="missing-title">Page not found.</h1>
+            <p class="lead">The MIYO website is intentionally small. This route is not part of the public pages.</p>
+            <div class="hero-actions">
+              <a class="button primary" href="./">
+                <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#chevron-left"></use></svg>
+                Back to MIYO
+              </a>
+              <a class="button secondary" href="github/">
+                <svg class="icon" aria-hidden="true"><use href="assets/icons.svg#github"></use></svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
+  <script src="script.js"></script>
 </body>
 </html>

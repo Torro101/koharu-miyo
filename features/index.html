@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Features - MIYO</title>
-  <meta name="description" content="Feature overview for MIYO, an open-source Android comic and manga reader.">
-  <meta name="theme-color" content="#063f4f">
+  <meta name="description" content="Feature guide for MIYO, an open-source Android comic and manga reader.">
+  <meta name="theme-color" content="#2c2037">
   <link rel="icon" href="../assets/icon.png">
   <link rel="stylesheet" href="../styles.css">
 </head>
@@ -13,11 +13,11 @@
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header" data-elevated="false">
     <a class="brand" href="../" aria-label="MIYO home">
-      <img src="../assets/icon.png" alt="" width="36" height="36">
+      <img src="../assets/icon.png" alt="" width="38" height="38">
       <span>MIYO</span>
     </a>
     <nav class="site-nav" aria-label="Primary navigation">
-      <a href="../features/" aria-current="page">Features</a>
+      <a href="../features/">Features</a>
       <a href="../downloads/">Downloads</a>
       <a href="../docs/">Docs</a>
       <a href="../credits/">Credits</a>
@@ -25,38 +25,36 @@
     </nav>
   </header>
 
-  <main id="main">
+  <main id="main" class="shell">
     <section class="page-hero">
       <p class="eyebrow">Feature guide</p>
-      <h1>Everything MIYO adds around reading, downloads, and local control.</h1>
-      <p class="lead">This page turns the README-level overview into a user-facing guide for what the app is meant to do and where each feature fits.</p>
+      <h1>MIYO is built around reading flow, not just source browsing.</h1>
+      <p class="lead">
+        The app focuses on reliable local reading, background downloads, source/plugin separation,
+        and native helpers where Kotlin-only paths become expensive.
+      </p>
     </section>
 
     <nav class="page-nav" aria-label="Feature sections">
-      <a href="#reading"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#book"></use></svg>Reading</a>
+      <a href="#reader"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#book"></use></svg>Reader</a>
       <a href="#downloads"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#download"></use></svg>Downloads</a>
-      <a href="#plugins"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#plug"></use></svg>Plugins</a>
+      <a href="#sources"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#plug"></use></svg>Sources</a>
       <a href="#native"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#zap"></use></svg>Native</a>
     </nav>
 
-    <section class="content-section" id="reading">
-      <div class="content-grid">
-        <article class="detail-card">
-          <h2>Offline-first reader behavior</h2>
-          <p>MIYO is built for users who keep large local libraries and expect downloaded chapters to open without wasting network data.</p>
+    <section class="content-section" id="reader">
+      <div class="split">
+        <div>
+          <p class="eyebrow">Reader</p>
+          <h2>Downloaded chapters should open like local files.</h2>
+          <p class="lead">Offline-first behavior is the baseline. When a chapter is already downloaded, the reader should prefer local pages and avoid wasting network data.</p>
+        </div>
+        <article class="markdown-panel">
+          <h3>Reader goals</h3>
           <ul class="detail-list">
-            <li><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#check"></use></svg><span>Downloaded pages are preferred before online retrieval.</span></li>
-            <li><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#check"></use></svg><span>Local storage and history paths are treated as core workflows, not side features.</span></li>
-            <li><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#check"></use></svg><span>Reader state is designed around progress, page indexing, and resume behavior.</span></li>
-          </ul>
-        </article>
-        <article class="detail-card">
-          <h2>Library surfaces</h2>
-          <p>The app keeps history, favorites, local storage, explore, and feed surfaces separate so users can find content by intent instead of digging through one overloaded screen.</p>
-          <ul class="detail-list">
-            <li><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#layers"></use></svg><span>History for recently read titles.</span></li>
-            <li><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#layers"></use></svg><span>Favorites and categories for owned collections.</span></li>
-            <li><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#layers"></use></svg><span>Local storage for imported and downloaded chapters.</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#check"></use></svg><span>Prefer downloaded pages before remote image loading.</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#check"></use></svg><span>Keep page index, chapter progress, and resume state understandable.</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#check"></use></svg><span>Expose real retry/error surfaces when a page is missing or corrupted.</span></li>
           </ul>
         </article>
       </div>
@@ -64,68 +62,103 @@
 
     <section class="content-section" id="downloads">
       <div class="content-grid">
-        <article class="detail-card">
-          <h2>Download reliability</h2>
-          <p>Downloads are designed around real mobile conditions: slow providers, background work, notification controls, cancellation, and partial files.</p>
+        <article class="doc-card">
+          <span class="card-kicker"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#download"></use></svg>Download path</span>
+          <h2>Background downloads with better state.</h2>
+          <p>MIYO puts more attention on slow providers, notification controls, cancellation, local validation, and stuck-state visibility.</p>
           <ul class="detail-list">
-            <li><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#archive"></use></svg><span>Background worker flow with user-visible progress.</span></li>
-            <li><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#archive"></use></svg><span>Stuck-state diagnosis hooks for long-running downloads.</span></li>
-            <li><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#archive"></use></svg><span>Safer local chapter validation before declaring work complete.</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#archive"></use></svg><span>Progress surfaces for current work.</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#archive"></use></svg><span>Storage checks before declaring a chapter complete.</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#archive"></use></svg><span>Safer cancellation and stuck-download reporting paths.</span></li>
           </ul>
         </article>
-        <article class="detail-card">
-          <h2>Refinement and storage</h2>
-          <p>Optional image refinement is treated as a local post-processing workflow. The app avoids deleting original files until refined output is validated as readable.</p>
-          <ul class="detail-list">
-            <li><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#image"></use></svg><span>Refinement models are distributed separately when they should not bloat the main app.</span></li>
-            <li><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#image"></use></svg><span>Image and archive work is guarded against corrupted output.</span></li>
-          </ul>
-        </article>
+        <figure class="shot-card">
+          <img src="../assets/screenshots/history.png" alt="MIYO history screen with downloaded manga progress badges">
+          <figcaption class="shot-caption"><span>History</span><span>Progress visible</span></figcaption>
+        </figure>
       </div>
     </section>
 
-    <section class="content-section" id="plugins">
+    <section class="content-section" id="sources">
       <div class="content-grid">
-        <article class="detail-card">
-          <h2>Source plugin boundary</h2>
-          <p>MIYO keeps source-specific parsing outside the core reader where possible. Compatible plugins are currently Kotatsu-style JAR parser plugins.</p>
+        <figure class="shot-card">
+          <img src="../assets/screenshots/explore.png" alt="MIYO explore screen showing source shortcuts and manga sources">
+          <figcaption class="shot-caption"><span>Explore</span><span>Sources separated</span></figcaption>
+        </figure>
+        <article class="doc-card">
+          <span class="card-kicker"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#plug"></use></svg>Sources</span>
+          <h2>Parser logic stays away from the core reader.</h2>
+          <p>Compatible source plugins use the Kotatsu-style parser boundary. Repositories that contain Mihon/Tachiyomi APKs are detected and blocked until a real compatibility runtime exists.</p>
           <ul class="detail-list">
-            <li><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#plug"></use></svg><span>GitHub release imports for compatible JAR plugins.</span></li>
-            <li><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#shield"></use></svg><span>Keiyoushi/Mihon APK repositories are detected and blocked until a real compatibility runtime exists.</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#shield"></use></svg><span>Clear error paths for unsupported plugin formats.</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#shield"></use></svg><span>Captcha/browser handoff remains source-aware.</span></li>
           </ul>
-        </article>
-        <article class="detail-card">
-          <h2>Captcha and provider realities</h2>
-          <p>Some providers require browser or Cloudflare verification. MIYO exposes these flows in the app while keeping provider behavior separate from the website.</p>
-          <p>This website does not proxy, mirror, or unlock any provider content.</p>
         </article>
       </div>
     </section>
 
     <section class="content-section" id="native">
-      <div class="content-grid">
-        <article class="detail-card">
-          <h2>C++ integrations</h2>
-          <p>Native helpers are used where they can reduce app latency or make image/archive work more predictable.</p>
-          <ul class="detail-list">
-            <li><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#zap"></use></svg><span>Image probing and format inspection.</span></li>
-            <li><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#zap"></use></svg><span>Archive-oriented native paths where Android/Kotlin overhead is avoidable.</span></li>
-            <li><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#zap"></use></svg><span>Future refinement acceleration without moving the whole app into native code.</span></li>
-          </ul>
-        </article>
-        <aside class="callout">
-          <h2>Design rule</h2>
-          <p>Native code should support the reader. It should not become a second app hidden inside the app. Keep the boundary clear, measurable, and recoverable.</p>
-          <a href="../docs/">Read the architecture notes</a>
-        </aside>
+      <div class="split">
+        <div>
+          <p class="eyebrow">Native work</p>
+          <h2>C++ is used as a helper layer, not as a second app.</h2>
+          <p class="lead">Native code belongs on measurable hot paths: image probing, archive work, and refinement helpers where JNI overhead is worth paying.</p>
+        </div>
+        <ol class="system-list">
+          <li><span>Probe</span><strong>detect dimensions and format before expensive decoding</strong></li>
+          <li><span>Archive</span><strong>support zip-oriented chapter work and CRC paths</strong></li>
+          <li><span>Refine</span><strong>accelerate local enhancement when a model is installed</strong></li>
+          <li><span>Guard</span><strong>fallback to safe Kotlin paths when native work cannot run</strong></li>
+        </ol>
       </div>
     </section>
+
+    <section class="content-section">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Interface evidence</p>
+          <h2>Real app states, not fake product chrome.</h2>
+        </div>
+        <p>The screenshots show the actual UI direction: black canvas, purple navigation, dense manga grids, and source/action sheets.</p>
+      </div>
+      <div class="app-gallery">
+        <figure>
+          <img src="../assets/screenshots/favorites.png" alt="Favorites screen">
+          <figcaption>Favorites</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/screenshots/title.png" alt="Title details screen">
+          <figcaption>Title details</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/screenshots/feed.png" alt="Feed updates screen">
+          <figcaption>Feed</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <nav class="pager" aria-label="Page navigation">
+      <a href="../">
+        <svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#chevron-left"></use></svg>
+        <div>
+          <small>Previous</small>
+          <span>Overview</span>
+        </div>
+      </a>
+      <a class="next" href="../downloads/">
+        <div>
+          <small>Next</small>
+          <span>Downloads</span>
+        </div>
+        <svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#chevron-right"></use></svg>
+      </a>
+    </nav>
   </main>
 
-  <footer class="site-footer">
+  <footer class="site-footer shell">
     <div>
       <strong>MIYO</strong>
-      <p>Open-source Android comic reader. This website does not host manga or third-party catalogs.</p>
+      <p>Feature notes for users and contributors.</p>
     </div>
     <nav aria-label="Footer links">
       <a href="../github/">GitHub</a>

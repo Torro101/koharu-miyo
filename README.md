@@ -35,4 +35,4 @@ The default project URL is:
 
 https://torro101.github.io/koharu-miyo/
 
-A custom domain such as `koharu.miyo` requires owning the domain and configuring DNS before adding a `CNAME` file.
+No custom domain is configured yet. Use the default GitHub Pages URL until a domain is owned and DNS is ready.
