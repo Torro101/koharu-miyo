@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Docs - MIYO</title>
+  <meta name="description" content="MIYO documentation overview, architecture notes, plugin compatibility, and website hosting boundaries.">
+  <meta name="theme-color" content="#063f4f">
+  <link rel="icon" href="../assets/icon.png">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" data-elevated="false">
+    <a class="brand" href="../" aria-label="MIYO home">
+      <img src="../assets/icon.png" alt="" width="36" height="36">
+      <span>MIYO</span>
+    </a>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a href="../features/">Features</a>
+      <a href="../downloads/">Downloads</a>
+      <a href="../docs/" aria-current="page">Docs</a>
+      <a href="../credits/">Credits</a>
+      <a href="../github/">GitHub</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <p class="eyebrow">Documentation</p>
+      <h1>Project notes for users and contributors.</h1>
+      <p class="lead">A concise public reference based on the app README, release process, and architecture decisions.</p>
+    </section>
+
+    <nav class="page-nav" aria-label="Documentation sections">
+      <a href="#overview"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#book"></use></svg>Overview</a>
+      <a href="#architecture"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#layers"></use></svg>Architecture</a>
+      <a href="#plugins"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#plug"></use></svg>Plugins</a>
+      <a href="#website"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#external"></use></svg>Website</a>
+    </nav>
+
+    <section class="content-section" id="overview">
+      <div class="content-grid">
+        <article class="doc-card">
+          <h2>What MIYO is</h2>
+          <p>MIYO is an Android comic reader built for large libraries, online sources, and reliable offline reading. It focuses on a clean Material interface, strong source/plugin boundaries, stable downloads, and practical performance on low-end and modern devices.</p>
+        </article>
+        <article class="doc-card">
+          <h2>What MIYO is not</h2>
+          <p>MIYO is not a manga host, content mirror, or source catalog website. Users control their own local files and source configuration, and they are responsible for the services they access.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="content-section" id="architecture">
+      <h2>Application layers</h2>
+      <ol class="system-list">
+        <li><span>UI</span><strong>Material screens for history, favorites, explore, feed, local storage, reader, downloads, and settings.</strong></li>
+        <li><span>Reader</span><strong>Chapter pages, cache, page state, reading progress, and offline fallback behavior.</strong></li>
+        <li><span>Downloads</span><strong>Workers, notifications, local directories, cancellation, validation, and storage cleanup.</strong></li>
+        <li><span>Sources</span><strong>Parser logic, source settings, authentication, captcha handoff, Cloudflare/browser flows, and plugin boundaries.</strong></li>
+        <li><span>Native</span><strong>C++ helpers for image probing, archive work, and performance-sensitive refinement paths.</strong></li>
+        <li><span>Release</span><strong>GitHub Actions builds, release APK artifacts, model packages, and in-app update metadata.</strong></li>
+      </ol>
+    </section>
+
+    <section class="content-section" id="plugins">
+      <div class="content-grid">
+        <article class="doc-card">
+          <h2>Compatible plugins</h2>
+          <p>The current external plugin path is for Kotatsu-compatible JAR parser plugins. GitHub release imports search for JAR assets and load them through the app's parser bridge.</p>
+          <ul class="detail-list">
+            <li><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#check"></use></svg><span>Use JAR plugins built for the MIYO/Kotatsu parser API.</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#check"></use></svg><span>Update both MIYO and the plugin when compatibility errors occur.</span></li>
+          </ul>
+        </article>
+        <article class="doc-card">
+          <h2>Keiyoushi and Mihon APKs</h2>
+          <p>Keiyoushi repositories are detected so users receive a clear message, but those extensions are Mihon/Tachiyomi APKs. They require a dedicated compatibility runtime before MIYO can run them safely.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="content-section" id="website">
+      <div class="content-grid">
+        <article class="doc-card">
+          <h2>GitHub Pages deployment</h2>
+          <p>This website is a static GitHub Pages site. It can publish from the `main` branch root without a build step.</p>
+          <ul class="detail-list">
+            <li><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#check"></use></svg><span>Source: Deploy from a branch.</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#check"></use></svg><span>Branch: main.</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#check"></use></svg><span>Folder: / root.</span></li>
+          </ul>
+        </article>
+        <article class="doc-card">
+          <h2>Custom domain</h2>
+          <p>The expected default URL is `https://torro101.github.io/koharu-miyo/`. A domain such as `koharu.miyo` should only be added after the domain is actually owned and DNS points to GitHub Pages. This site intentionally does not include a CNAME yet.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>
+      <strong>MIYO</strong>
+      <p>Documentation for the public website and app project.</p>
+    </div>
+    <nav aria-label="Footer links">
+      <a href="../github/">GitHub</a>
+      <a href="../downloads/">Downloads</a>
+      <a href="../credits/">Credits</a>
+    </nav>
+  </footer>
+  <script src="../script.js"></script>
+</body>
+</html>

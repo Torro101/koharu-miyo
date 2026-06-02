@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Downloads - MIYO</title>
+  <meta name="description" content="Download the latest MIYO APK and release assets from GitHub Releases.">
+  <meta name="theme-color" content="#063f4f">
+  <link rel="icon" href="../assets/icon.png">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" data-elevated="false">
+    <a class="brand" href="../" aria-label="MIYO home">
+      <img src="../assets/icon.png" alt="" width="36" height="36">
+      <span>MIYO</span>
+    </a>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a href="../features/">Features</a>
+      <a href="../downloads/" aria-current="page">Downloads</a>
+      <a href="../docs/">Docs</a>
+      <a href="../credits/">Credits</a>
+      <a href="../github/">GitHub</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <p class="eyebrow">Downloads</p>
+      <h1>Install MIYO from signed GitHub Releases.</h1>
+      <p class="lead">APK assets stay on the main MIYO repository so users always download from the same release history and signing flow.</p>
+      <div class="hero-actions">
+        <a class="button primary" href="https://github.com/Torro101/MIYO/releases/download/v0.0.5/Miyo-v0.0.5-release.apk">
+          <svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#download"></use></svg>
+          Download v0.0.5 APK
+        </a>
+        <a class="button secondary" href="https://github.com/Torro101/MIYO/releases/latest">
+          <svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#external"></use></svg>
+          Latest release
+        </a>
+      </div>
+    </section>
+
+    <nav class="page-nav" aria-label="Download sections">
+      <a href="#latest"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#download"></use></svg>Latest</a>
+      <a href="#install"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#shield"></use></svg>Install notes</a>
+      <a href="#models"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#image"></use></svg>Models</a>
+    </nav>
+
+    <section class="content-section" id="latest">
+      <h2>Current release</h2>
+      <table class="release-table">
+        <thead>
+          <tr>
+            <th>Asset</th>
+            <th>Version</th>
+            <th>Purpose</th>
+            <th>Link</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Miyo-v0.0.5-release.apk</td>
+            <td>v0.0.5</td>
+            <td>Main Android release package.</td>
+            <td><a class="text-link" href="https://github.com/Torro101/MIYO/releases/download/v0.0.5/Miyo-v0.0.5-release.apk">Download APK</a></td>
+          </tr>
+          <tr>
+            <td>miyo-refinement-models-v0.0.5.zip</td>
+            <td>v0.0.5</td>
+            <td>Optional downloadable refinement model package.</td>
+            <td><a class="text-link" href="https://github.com/Torro101/MIYO/releases/download/v0.0.5/miyo-refinement-models-v0.0.5.zip">Download models</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="content-section" id="install">
+      <div class="content-grid">
+        <article class="detail-card">
+          <h2>Android update compatibility</h2>
+          <p>Android only installs a new APK over an existing installation when the package name and signing certificate match. MIYO release builds use the package ID:</p>
+          <p><strong>org.koharu.miyo</strong></p>
+          <ul class="detail-list">
+            <li><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#check"></use></svg><span>Keep the same signing key for all public releases.</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#check"></use></svg><span>Use Gradle-defined app versions, not APK metadata patched after build.</span></li>
+            <li><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#check"></use></svg><span>Use GitHub Releases as the update source.</span></li>
+          </ul>
+        </article>
+        <article class="detail-card">
+          <h2>Install source</h2>
+          <p>Download APKs only from the official repository release page unless you intentionally build the app yourself from source.</p>
+          <p><a class="text-link" href="https://github.com/Torro101/MIYO/releases">Open all releases</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="content-section" id="models">
+      <div class="content-grid">
+        <article class="detail-card">
+          <h2>Refinement model distribution</h2>
+          <p>The main APK should stay small. The general bundled model is part of the release APK when configured by CI; optional models are release assets that users can download when needed.</p>
+        </article>
+        <aside class="callout">
+          <h2>Why not mirror APKs here?</h2>
+          <p>Keeping APKs in GitHub Releases avoids duplicate outdated files in the website repo and keeps checksums, release notes, and update history in one place.</p>
+          <a href="https://github.com/Torro101/MIYO/releases/latest">Go to latest release</a>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>
+      <strong>MIYO</strong>
+      <p>Open-source Android comic reader. APKs are served by GitHub Releases.</p>
+    </div>
+    <nav aria-label="Footer links">
+      <a href="../github/">GitHub</a>
+      <a href="../features/">Features</a>
+      <a href="../docs/">Docs</a>
+    </nav>
+  </footer>
+  <script src="../script.js"></script>
+</body>
+</html>

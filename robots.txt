@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://torro101.github.io/koharu-miyo/sitemap.xml
