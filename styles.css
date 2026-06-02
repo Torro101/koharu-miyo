@@ -95,6 +95,8 @@ pre {
   background: color-mix(in oklab, var(--surface-2) 80%, black 3%);
   border: 1px solid var(--line);
   border-radius: var(--radius);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
 }
 
 ::selection {
@@ -752,6 +754,7 @@ h3 {
 
 .markdown-panel {
   padding: 30px;
+  overflow: hidden;
 }
 
 .markdown-panel h2,
@@ -779,6 +782,7 @@ h3 {
 
 .release-table {
   width: 100%;
+  table-layout: fixed;
   border-collapse: collapse;
   background: var(--surface);
   border: 1px solid var(--line);
@@ -791,6 +795,8 @@ h3 {
   padding: 16px;
   text-align: left;
   border-bottom: 1px solid var(--line);
+  overflow-wrap: anywhere;
+  vertical-align: top;
 }
 
 .release-table tr:last-child td {
@@ -1018,15 +1024,24 @@ h3 {
   }
 
   .screen-wall {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    padding: 4px 4px 16px;
+    scroll-snap-type: x mandatory;
+  }
+
+  .screen-wall .shot-card {
+    min-width: min(270px, 74vw);
+    scroll-snap-align: start;
+  }
+
+  .shot-card.small {
+    margin-top: 0;
   }
 
   .app-gallery {
-    grid-auto-columns: minmax(172px, 58%);
-  }
-
-  .shot-card.large {
-    grid-column: span 1;
+    grid-auto-columns: minmax(210px, 72%);
   }
 
   .feature-grid,
@@ -1048,6 +1063,58 @@ h3 {
 
   .button {
     width: 100%;
+  }
+
+  .markdown-panel {
+    padding: 22px;
+  }
+
+  .release-table,
+  .release-table tbody,
+  .release-table tr,
+  .release-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .release-table thead {
+    display: none;
+  }
+
+  .release-table {
+    border-collapse: separate;
+    border-spacing: 0;
+    background: transparent;
+    border: 0;
+  }
+
+  .release-table tr {
+    margin: 0 0 12px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+
+  .release-table td {
+    display: grid;
+    grid-template-columns: minmax(92px, 0.42fr) minmax(0, 1fr);
+    gap: 12px;
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .release-table td::before {
+    content: attr(data-label);
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 850;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .release-table td:last-child {
+    border-bottom: 0;
   }
 
   .github-body {
